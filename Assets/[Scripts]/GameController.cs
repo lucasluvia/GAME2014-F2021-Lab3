@@ -11,13 +11,6 @@ public class GameController : MonoBehaviour
     public Button backButton;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Rect screenRect = new Rect(0.0f, 0.0f, Screen.width, Screen.height);

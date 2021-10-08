@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55791693a8ee9c478778a20cdd4b871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletManager: {fileID: 0}
-  speed: 0.1
-  bulletBounds:
-    min: 4.8
-    max: -4.8
+  BulletManager: {fileID: 0}
+  Speed: 0.1
+  BulletBounds:
+    min: 5.5
+    max: -5.5

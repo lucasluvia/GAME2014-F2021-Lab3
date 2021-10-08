@@ -6,10 +6,10 @@ public class PlayerBehaviour : MonoBehaviour
 {
     [Header("Player Movement")]
     [Range(0.0f, 100.0f)]
-    public float horizontalForce;
-    public Bounds bounds;
+    public float HorizontalForce;
+    public Bounds Bounds;
     [Range(0.0f, 0.99f)]
-    public float decay;
+    public float Decay;
 
     private Rigidbody2D rigidbody;
 
@@ -31,23 +31,23 @@ public class PlayerBehaviour : MonoBehaviour
     {
         var x = Input.GetAxisRaw("Horizontal");
 
-        rigidbody.AddForce(new Vector2(x * horizontalForce, 0.0f));
+        rigidbody.AddForce(new Vector2(x * HorizontalForce, 0.0f));
 
-        rigidbody.velocity *= (1.0f - decay);
+        rigidbody.velocity *= (1.0f - Decay);
     }
 
     private void CheckBounds()
     {
         // left bounds
-        if (transform.position.x < bounds.min)
+        if (transform.position.x < Bounds.min)
         {
-            transform.position = new Vector2(bounds.min, transform.position.y);
+            transform.position = new Vector2(Bounds.min, transform.position.y);
         }
 
         // right bounds
-        if (transform.position.x > bounds.max)
+        if (transform.position.x > Bounds.max)
         {
-            transform.position = new Vector2(bounds.max, transform.position.y);
+            transform.position = new Vector2(Bounds.max, transform.position.y);
         }
     }
 }

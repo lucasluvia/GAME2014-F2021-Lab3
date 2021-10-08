@@ -5,24 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class UIBehaviour : MonoBehaviour
 {
-    private int nextSceneIndex;
-    private int previousSceneIndex;
+    private int NextSceneIndex;
+    private int PreviousSceneIndex;
 
     void Start()
     {
-        nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        previousSceneIndex = SceneManager.GetActiveScene().buildIndex - 1;
+        NextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        PreviousSceneIndex = SceneManager.GetActiveScene().buildIndex - 1;
     }
 
     // NextButton Pressed event handler
     public void OnNextButtonPressed()
     {
-        SceneManager.LoadScene(nextSceneIndex);
+        SceneManager.LoadScene(NextSceneIndex);
     }
 
     // BackButton Pressed event handler
     public void OnBackButtonPressed()
     {
-        SceneManager.LoadScene(previousSceneIndex);
+        SceneManager.LoadScene(PreviousSceneIndex);
     }
 }

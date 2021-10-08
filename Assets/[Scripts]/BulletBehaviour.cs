@@ -5,28 +5,28 @@ using UnityEngine;
 public class BulletBehaviour : MonoBehaviour
 {
     [Range(0.0f, 2.0f)] 
-    public BulletManager bulletManager;
-    public float speed;
-    public Bounds bulletBounds;
+    public BulletManager BulletManager;
+    public float Speed;
+    public Bounds BulletBounds;
 
     void Start()
     {
-        bulletManager = GameObject.FindObjectOfType<BulletManager>();
+        BulletManager = GameObject.FindObjectOfType<BulletManager>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position -= new Vector3(0.0f, speed, 0.0f);
+        transform.position -= new Vector3(0.0f, Speed, 0.0f);
 
         CheckBounds();
     }
 
     public void CheckBounds()
     {
-        if (transform.position.y < bulletBounds.max)
+        if (transform.position.y < BulletBounds.max)
         {
-            bulletManager.ReturnBullet(this.gameObject);
+            BulletManager.ReturnBullet(this.gameObject);
         }
     }
 }
